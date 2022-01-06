@@ -36,7 +36,7 @@ lando ssh -s patch -c "env | grep NODE_VERSION=16.13.0"
 lando ssh -s defaults -c "curl http://localhost | grep tune"
 
 # Should set NODE_EXTRA_CA_CERTS with lando domain CA
-lando ssh -s defaults -c \'env | grep NODE_EXTRA_CA_CERTS | grep "$LANDO_CA_CERT"\'
+lando ssh -s defaults -c "env" | grep NODE_EXTRA_CA_CERTS | grep "$LANDO_CA_CERT"
 
 # Should only serve over http by default
 lando ssh -s defaults -c "curl https://localhost" || echo $? | grep 1
