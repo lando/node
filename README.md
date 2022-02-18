@@ -1,65 +1,42 @@
-# Lando Node Plugin
+# Node Lando Plugin
 
-The Lando Node plugin service.
+This is the _official_ [Lando](https://lando.dev) plugin for [NodeJS](https://nodejs.org/en/). When installed it...
 
-## Installation
+* Allows users to run various `node` versions
+* Runs in `cli` mode
+* Comes with easy `npm` and `yarn` support
 
-```bash
-# With npm
-npm install @lando/node
+Of course, once a user is running their node project with Lando they can take advantage of [all the other awesome development features](https://docs.lando.dev) Lando provides.
 
-# With yarn
-yarn add @lando/node
+## Basic Usage
+
+Add a `node` service to your Landofile
+
+```yaml
+services:
+  myservice:
+    type: node:16
+    command: npm start
 ```
+
+For more info you should check out the [docs](https://docs.lando.dev/node):
+
+* [Getting Started](https://docs.lando.dev/node/)
+* [Configuration](https://docs.lando.dev/node/config.html)
+* [Caveats](https://docs.lando.dev/node/caveats.html)
+* [Guides](https://docs.lando.dev/node/using-browsersync.html)
+* [Examples](https://github.com/lando/node/tree/main/examples)
+* [Development](https://docs.lando.dev/node/development.html)
 
 ## Issues, Questions and Support
 
-If you have a question or would like some community support we recommend you [join us on Slack](https://launchpass.com/devwithlando). Note that this is the Slack community for [Lando](https://lando.dev) but we are more than happy to help with this module as well!
+If you have a question or would like some community support we recommend you [join us on Slack](https://launchpass.com/devwithlando).
 
 If you'd like to report a bug or submit a feature request then please [use the issue queue](https://github.com/lando/node/issues/new/choose) in this repo.
 
 ## Changelog
 
 We try to log all changes big and small in both [THE CHANGELOG](https://github.com/lando/node/blob/main/CHANGELOG.md) and the [release notes](https://github.com/lando/node/releases).
-
-
-## Development
-
-* Requires [Node 14+](https://nodejs.org/dist/latest-v14.x/)
-* Prefers [Yarn](https://classic.yarnpkg.com/lang/en/docs/install)
-
-```bash
-git clone https://github.com/lando/node.git && cd node
-yarn install
-```
-
-If you dont' want to install Node 14 or Yarn for whatever reason you can install [Lando](https://docs.lando.dev/basics/installation.html) and use that:
-
-```bash
-git clone https://github.com/lando/node.git && cd node
-# Install deps and get node
-lando start
-
-# Run commands
-lando node
-lando yarn
-```
-
-## Testing
-
-```bash
-# Lint the code
-yarn lint
-
-# Run unit tests
-yarn test
-```
-
-## Releasing
-
-```bash
-yarn release
-```
 
 ## Contributors
 
@@ -69,6 +46,7 @@ yarn release
 
 Made with [contributors-img](https://contrib.rocks).
 
-## Other Resources
+## Other Selected Resources
 
-* [Important advice](https://www.youtube.com/watch?v=WA4iX5D9Z64)
+* [LICENSE](https://github.com/lando/node/blob/main/LICENSE.md)
+* [The best professional advice ever](https://www.youtube.com/watch?v=tkBVDh7my9Q)

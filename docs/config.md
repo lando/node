@@ -1,54 +1,9 @@
 ---
-description: Add a highly configurable node service to Lando for local development with all the power of Docker and Docker Compose; includes npm and yarn for dependencies funsies.
+title: Configuration
+description: Learn how to configure the Lando Node service.
 ---
 
-# Node
-
-[Node.js](https://nodejs.org/en/) is a JavaScript runtime built on Chrome's V8 JavaScript engine and uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Beyond running web applications, it is also commonly used for frontend tooling.
-
-You can easily add it to your Lando app by adding an entry to the [services](https://docs.lando.dev/config/services.html) top-level config in your [Landofile](https://docs.lando.dev/config/lando.html).
-
-[[toc]]
-
-## Supported versions
-
-*   [16](https://hub.docker.com/r/_/node/)
-*   **[14](https://hub.docker.com/r/_/node/)** **(default)**
-*   [custom](https://docs.lando.dev/config/services.html#advanced)
-
-## Legacy versions
-
-You can still run these versions with Lando but for all intents and purposes they should be considered deprecated (e.g. YMMV and do not expect a ton of support if you have an issue).
-
-*   [13](https://hub.docker.com/r/_/node/)
-*   [12.4 - 12.16](https://hub.docker.com/r/_/node/)
-*   [12](https://hub.docker.com/r/_/node/)
-*   [11](https://hub.docker.com/r/_/node/)
-*   [11.4 - 11.15](https://hub.docker.com/r/_/node/)
-*   [10](https://hub.docker.com/r/_/node/)
-*   [10.14 - 10.19](https://hub.docker.com/r/_/node/)
-*   [8](https://hub.docker.com/r/_/node/)
-*   [8.14](https://hub.docker.com/r/_/node/)
-*   [6](https://hub.docker.com/r/_/node/)
-*   [6.15](https://hub.docker.com/r/_/node/)
-
-## Patch versions
-
-::: warning Not officially supported!
-While we allow users to specify patch versions for this service, they are not *officially* supported, so if you use one, YMMV.
-:::
-
-To use a patch version, you can do something as shown below:
-
-```yaml
-services:
-  myservice:
-    type: node:16.13
-```
-
-But make sure you use one of the available [patch tags](https://hub.docker.com/r/library/node/tags/) for the underlying image we are using.
-
-## Configuration
+# Configuration
 
 Here are the configuration options, set to the default values, for this service. If you are unsure about where this goes or what this means, we *highly recommend* scanning the [services documentation](https://docs.lando.dev/config/services.html) to get a good handle on how the magicks work.
 
@@ -64,7 +19,7 @@ services:
     port: 80
 ```
 
-### Specifying a command
+## Specifying a command
 
 Note that if you *do not* define a `command` for this service, it will effectively be a "cli" container (e.g. it will not serve or run an application by default but will be available to run `node` commands against).
 
@@ -77,7 +32,7 @@ services:
     command: npm start
 ```
 
-### Setting a port
+## Setting a port
 
 While we assume your `node` service is running on port `80`, we recognize that many `node` app's also run on port `3000` or otherwise. You can easily change our default to match whatever your app needs. If your `node` service doesn't require an exposed port, you can also set `port` to `false` to disable the default port `80` mapping.
 
@@ -90,7 +45,7 @@ services:
     port: 3000
 ```
 
-### Using SSL
+## Using SSL
 
 Also note that `ssl: true` will only generate certs in the [default locations](https://docs.lando.dev/config/security.html) and expose port `443`. It is up to the user to use the certs and secure port correctly in their application like the `node` snippet below:
 
@@ -120,7 +75,7 @@ services:
     ssl: 4444
 ```
 
-### Installing global dependencies
+## Installing global dependencies
 
 You can also use the `globals` key if you need to install any [global node dependencies](https://docs.npmjs.com/cli/install). This follows the same syntax as your normal [`package.json`](https://docs.npmjs.com/files/package.json) except written as YAML instead of JSON.
 
@@ -151,23 +106,3 @@ services:
       - yarn install
     command: yarn start-app
 ```
-
-## Path Considerations
-
-Lando will set the `PATH` hierarchy for this service as follows:
-
-```js
-[
-  '/app/node_modules/.bin',
-  '/usr/local/sbin',
-  '/usr/local/bin',
-  '/usr/sbin',
-  '/usr/bin',
-  '/sbin',
-  '/bin',
-]
-```
-
-This is useful to note if you are not using absolute paths in any [tooling routes](https://docs.lando.dev/config/tooling.html) and are getting the unexpected version of a particular utility.
-
-<RelatedGuides tag="Node"/>
