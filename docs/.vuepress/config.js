@@ -30,32 +30,32 @@ module.exports = {
     sidebar: [
       {
         text: 'Getting Started',
-        link: '/index.md',
+        link: '/index.html',
       },
-      '/config.md',
-      '/caveats.md',
+      '/config.html',
+      '/caveats.html',
       {
         text: 'Guides',
         collapsible: true,
         children: [
           {
             text: 'Using Browsersync',
-            link: '/using-browsersync.md',
+            link: '/using-browsersync.html',
           },
           {
             text: 'Using Compass',
-            link: '/using-compass.md',
+            link: '/using-compass.html',
           },
           {
             text: 'Using Frontend Tooling',
-            link: '/frontend-tooling.md',
+            link: '/frontend-tooling.html',
           },
         ],
       },
-      '/support.md',
+      '/support.html',
       {text: 'Examples', link: 'https://github.com/lando/node/tree/main/examples'},
       {text: 'Release Notes', link: 'https://github.com/lando/node/releases'},
-      '/development.md',
+      '/development.html',
     ],
   },
 };
