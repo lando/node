@@ -19,6 +19,8 @@ services:
 
 ## Supported versions
 
+*   [19 - 19.5](https://hub.docker.com/r/_/node/)
+*   [18 - 18.13](https://hub.docker.com/r/_/node/)
 *   [16](https://hub.docker.com/r/_/node/)
 *   **[14](https://hub.docker.com/r/_/node/)** **(default)**
 *   [custom](https://docs.lando.dev/config/services.html#advanced)
