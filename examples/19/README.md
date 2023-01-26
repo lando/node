@@ -27,7 +27,7 @@ Run the following commands to validate things are rolling as they should.
 lando ssh -s defaults -c "env | grep NODE_VERSION=19."
 
 # Should use a user specified version if given
-lando ssh -s custom -c "env | grep NODE_VERSION=17."
+lando ssh -s custom -c "env | grep NODE_VERSION=18."
 
 # Should use a user specified patch version if given
 lando ssh -s custom2 -c "env | grep NODE_VERSION=19.4.0"
