@@ -1,7 +1,7 @@
 {
   "name": "@lando/node",
   "description": "The Official Node Lando Plugin.",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "author": "Mike Pirog @pirog",
   "license": "GPL-3.0",
   "repository": "lando/node",
