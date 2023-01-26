@@ -1,9 +1,9 @@
-Node 18 Example
+Node 19 Example
 ===============
 
 This example exists primarily to test the following documentation:
 
-* [Node 14-18 Service](https://docs.devwithlando.io/tutorials/node.html)
+* [Node 14-19 Service](https://docs.devwithlando.io/tutorials/node.html)
 * [Installing compass in your node service](https://docs.lando.dev/guides/using-compass-on-a-lando-node-service.html)
 
 Start up tests
@@ -23,14 +23,14 @@ Verification commands
 Run the following commands to validate things are rolling as they should.
 
 ```bash
-# Should use 18.x as the default version
-lando ssh -s defaults -c "env | grep NODE_VERSION=18."
+# Should use 19.x as the default version
+lando ssh -s defaults -c "env | grep NODE_VERSION=19."
 
 # Should use a user specified version if given
 lando ssh -s custom -c "env | grep NODE_VERSION=17."
 
 # Should use a user specified patch version if given
-lando ssh -s patch -c "env | grep NODE_VERSION=18.12.1"
+lando ssh -s custom2 -c "env | grep NODE_VERSION=19.4.0"
 
 # Should serve over port 80 by default
 lando ssh -s defaults -c "curl http://localhost | grep tune"
