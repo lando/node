@@ -1,3 +1,6 @@
+## v0.8.0 - [January 26, 2023](https://github.com/lando/node/releases/tag/v0.8.0)
+  * Add support for Node 18 and 19.
+
 ## v0.7.0 - [December 12, 2022](https://github.com/lando/node/releases/tag/v0.7.0)
   * Added bundle-dependencies to release process.
   * Fixed bug in plugin dogfooding test.
