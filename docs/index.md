@@ -22,6 +22,7 @@ services:
 *   [18](https://hub.docker.com/r/_/node/)
 *   [17](https://hub.docker.com/r/_/node/)
 *   [16](https://hub.docker.com/r/_/node/)
+*   [15](https://hub.docker.com/r/_/node/)
 *   **[14](https://hub.docker.com/r/_/node/)** **(default)**
 *   [custom](https://docs.lando.dev/config/services.html#advanced)
 
