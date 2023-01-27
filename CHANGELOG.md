@@ -1,3 +1,6 @@
+## v0.8.1 - [January 26, 2023](https://github.com/lando/node/releases/tag/v0.8.1)
+  * Add support for Node 13/15/17.
+
 ## v0.8.0 - [January 26, 2023](https://github.com/lando/node/releases/tag/v0.8.0)
   * Add support for Node 18 and 19.
 
