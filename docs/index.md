@@ -19,6 +19,8 @@ services:
 
 ## Supported versions
 
+*   [18](https://hub.docker.com/r/_/node/)
+*   [17](https://hub.docker.com/r/_/node/)
 *   [16](https://hub.docker.com/r/_/node/)
 *   **[14](https://hub.docker.com/r/_/node/)** **(default)**
 *   [custom](https://docs.lando.dev/config/services.html#advanced)
@@ -28,16 +30,11 @@ services:
 You can still run these versions with Lando but for all intents and purposes they should be considered deprecated (e.g. YMMV and do not expect a ton of support if you have an issue).
 
 *   [13](https://hub.docker.com/r/_/node/)
-*   [12.4 - 12.16](https://hub.docker.com/r/_/node/)
 *   [12](https://hub.docker.com/r/_/node/)
 *   [11](https://hub.docker.com/r/_/node/)
-*   [11.4 - 11.15](https://hub.docker.com/r/_/node/)
 *   [10](https://hub.docker.com/r/_/node/)
-*   [10.14 - 10.19](https://hub.docker.com/r/_/node/)
 *   [8](https://hub.docker.com/r/_/node/)
-*   [8.14](https://hub.docker.com/r/_/node/)
 *   [6](https://hub.docker.com/r/_/node/)
-*   [6.15](https://hub.docker.com/r/_/node/)
 
 ## Patch versions
 
@@ -50,7 +47,7 @@ To use a patch version, you can do something as shown below:
 ```yaml
 services:
   myservice:
-    type: node:16.13
+    type: node:16.13.1
 ```
 
 But make sure you use one of the available [patch tags](https://hub.docker.com/r/library/node/tags/) for the underlying image we are using.
