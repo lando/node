@@ -8,11 +8,10 @@ services:
   cli:
     type: node
   compass:
-    type: node:12
+    type: node:14
     globals:
       grunt-cli: latest
     build_as_root:
-      - echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list
       - apt-get update -y
       - apt-get install ruby-full -y
       - gem install compass
