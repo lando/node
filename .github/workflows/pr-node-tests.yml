@@ -18,12 +18,13 @@ jobs:
           - examples/16
           - examples/18
           - examples/19
+          - examples/20
         lando-version:
           - 3-dev
         os:
           - ubuntu-22.04
         node-version:
-          - '16'
+          - '20'
     steps:
       - name: Checkout code
         uses: actions/checkout@v3

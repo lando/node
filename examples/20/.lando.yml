@@ -1,0 +1,43 @@
+name: lando-node-20
+services:
+  defaults:
+    type: node:20
+    build:
+      - yarn
+    command: /app/node_modules/.bin/nodemon src/app-http.js --watch src --ignore *.test.js
+  cli:
+    type: node
+  compass:
+    type: node:20
+    globals:
+      grunt-cli: latest
+    build_as_root:
+      - apt-get update -y
+      - apt-get install ruby-full -y
+      - gem install compass
+  custom:
+    type: node:20
+    ssl: true
+    globals:
+      gulp-cli: latest
+    port: 3000
+    build:
+      - yarn
+    command: /app/node_modules/.bin/nodemon src/app-https.js --watch src --ignore *.test.js
+  custom2:
+    type: node:20.9.0
+    ssl: 4444
+    port: 3000
+    build:
+      - yarn
+    command: /app/node_modules/.bin/nodemon src/app-custom.js --watch src --ignore *.test.js
+tooling:
+  ruby:
+    service: compass
+  compass:
+    service: compass
+
+# This is important because it lets lando know to test against the plugin in this repo
+# DO NOT REMOVE THIS!
+plugins:
+  "@lando/node": ./../../

@@ -1,3 +1,6 @@
+## v0.9.1 - [Nov 1, 2023](https://github.com/lando/node/releases/tag/v0.9.0)
+* Add support for Node 20.
+
 ## v0.9.0 - [July 3, 2023](https://github.com/lando/node/releases/tag/v0.9.0)
   * Removed bundle-dependencies and version-bump-prompt from plugin.
   * Updated package to use prepare-release-action.

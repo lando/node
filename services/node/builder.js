@@ -6,6 +6,16 @@ const utils = require('./../../lib/utils');
 
 // Constants
 const supportedVersions = [
+  '20',
+  '20.9',
+  '20.8',
+  '20.7',
+  '20.6',
+  '20.5',
+  '20.4',
+  '20.3',
+  '20.2',
+  '20.1',
   '19',
   '19.5',
   '19.4',
