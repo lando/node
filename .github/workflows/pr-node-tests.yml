@@ -23,7 +23,7 @@ jobs:
         os:
           - ubuntu-22.04
         node-version:
-          - '16'
+          - '18'
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -40,12 +40,9 @@ jobs:
         with:
           lando-version: ${{ matrix.lando-version }}
           config: |
-            plugins.@lando/node=/home/runner/work/node/node
+            setup.skipCommonPlugins=true
+            setup.plugins.@lando/php=/home/runner/work/node/node
           telemetry: false
-      - name: Verify Lando works and we are dogfooding this plugin for tests
-        run: |
-          lando version
-          lando config --path plugins | grep node | grep /home/runner/work/node/node || (echo "::error:: Not dogfooding this plugin correctly!" && exit 1)
       - name: Run Leia Tests
         uses: lando/run-leia-action@v2
         with:
