@@ -96,14 +96,14 @@ services:
     command: npm start
 ```
 
-An example of using a [build step](https://docs.lando.dev/config/services.html#build-steps) to automatically `yarn install` your dependencies before your app invokes `yarn start-app` is shown below:
+An example of using a [build step](https://docs.lando.dev/config/services.html#build-steps) to automatically `npm install` your dependencies before your app invokes `yarn start-app` is shown below:
 
 ```yaml
 services:
   myservice:
     type: node
     build:
-      - yarn install
+      - npm install
     command: yarn start-app
 ```
 

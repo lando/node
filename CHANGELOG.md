@@ -1,3 +1,6 @@
+## v1.0.0 - [December 7, 2023](https://github.com/lando/node/releases/tag/v1.0.0)
+    * Dialed fully for `lando update`
+
 ## v0.10.0 - [Dec 6, 2023](https://github.com/lando/node/releases/tag/v0.10.0)
 
   * Refactored plugin structure and isolated. [#59](https://github.com/lando/node/pull/59)
