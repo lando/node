@@ -15,7 +15,7 @@ jobs:
           - examples/10
           - examples/12
           - examples/14
-          - examples/16
+          - examples/18
           - examples/18
           - examples/19
         lando-version:
