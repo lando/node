@@ -60,18 +60,30 @@ This plugin is included with Lando by default. That means if you have Lando vers
 However if you would like to manually install the plugin, update it to the bleeding edge or install a particular version then use the below. Note that this installation method requires Lando `3.5.0+`.
 
 :::: code-group
+::: code-group-item LANDO 3.21+
+```bash:no-line-numbers
+lando plugin-add @lando/apache
+```
+:::
+::: code-group-item HYPERDRIVE
+```bash:no-line-numbers
+# @TODO
+# @NOTE: This doesn't actaully work yet
+hyperdrive install @lando/apache
+```
+:::
 ::: code-group-item DOCKER
 ```bash:no-line-numbers
 # Ensure you have a global plugins directory
 mkdir -p ~/.lando/plugins
 
 # Install plugin
-# NOTE: Modify the "yarn add @lando/node" line to install a particular version eg
-# yarn add @lando/node@0.5.2
+# NOTE: Modify the "npm install @lando/node" line to install a particular version eg
+# npm install @lando/node@0.5.2
 docker run --rm -it -v ${HOME}/.lando/plugins:/plugins -w /tmp node:14-alpine sh -c \
-  "yarn init -y \
-  && yarn add @lando/node --production --flat --no-default-rc --no-lockfile --link-duplicates \
-  && yarn install --production --cwd /tmp/node_modules/@lando/node \
+  "npm init -y \
+  && npm install @lando/node --production --flat --no-default-rc --no-lockfile --link-duplicates \
+  && npm install --production --cwd /tmp/node_modules/@lando/node \
   && mkdir -p /plugins/@lando \
   && mv --force /tmp/node_modules/@lando/node /plugins/@lando/node"
 
@@ -79,12 +91,6 @@ docker run --rm -it -v ${HOME}/.lando/plugins:/plugins -w /tmp node:14-alpine sh
 lando --clear
 ```
 :::
-::: code-group-item HYPERDRIVE
-```bash:no-line-numbers
-# @TODO
-# @NOTE: This doesn't actaully work yet
-hyperdrive install @lando/node
-```
 ::::
 
 You should be able to verify the plugin is installed by running `lando config --path plugins` and checking for `@lando/node`. This command will also show you _where_ the plugin is being loaded from.

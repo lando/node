@@ -2,7 +2,6 @@
 
 // Modules
 const _ = require('lodash');
-const utils = require('./../../lib/utils');
 
 // Constants
 const supportedVersions = [
@@ -217,8 +216,8 @@ module.exports = {
       options.moreHttpPorts.push(options.port);
       // Add our npm things to run step
       if (!_.isEmpty(options.globals)) {
-        const commands = utils.getInstallCommands(options.globals, pkger, ['npm', 'install', '-g']);
-        utils.addBuildStep(commands, options._app, options.name);
+        const commands = require('../utils/get-install-commands')(options.globals, pkger, ['npm', 'install', '-g']);
+        require('../utils/add-build-step')(commands, options._app, options.name);
       }
       // Set the sport and moreHttpPorts if ssl is numeric
       if (options.ssl) {

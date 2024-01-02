@@ -1,18 +1,30 @@
-## v0.9.1 - [Nov 1, 2023](https://github.com/lando/node/releases/tag/v0.9.0)
-* Add support for Node 20.
+## v1.1.0 - [January 2, 2023](https://github.com/lando/node/releases/tag/v1.1.0)
+  * Added support for Node 20. [#47](https://github.com/lando/node/issues/47)
+
+## v1.0.0 - [December 7, 2023](https://github.com/lando/node/releases/tag/v1.0.0)
+    * Dialed fully for `lando update`
+
+## v0.10.0 - [Dec 6, 2023](https://github.com/lando/node/releases/tag/v0.10.0)
+
+  * Refactored plugin structure and isolated. [#59](https://github.com/lando/node/pull/59)
+  * Updated dependencies.
 
 ## v0.9.0 - [July 3, 2023](https://github.com/lando/node/releases/tag/v0.9.0)
+
   * Removed bundle-dependencies and version-bump-prompt from plugin.
   * Updated package to use prepare-release-action.
   * Updated documentation to reflect new release process.
 
 ## v0.8.1 - [January 26, 2023](https://github.com/lando/node/releases/tag/v0.8.1)
+
   * Add support for Node 13/15/17.
 
 ## v0.8.0 - [January 26, 2023](https://github.com/lando/node/releases/tag/v0.8.0)
+
   * Add support for Node 18 and 19.
 
 ## v0.7.0 - [December 12, 2022](https://github.com/lando/node/releases/tag/v0.7.0)
+
   * Added bundle-dependencies to release process.
   * Fixed bug in plugin dogfooding test.
 
