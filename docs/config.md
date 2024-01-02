@@ -12,7 +12,7 @@ Also note that options, in addition to the [build steps](https://docs.lando.dev/
 ```yaml
 services:
   myservice:
-    type: node:16
+    type: node:18
     ssl: false
     command: tail -f /dev/null
     globals: []
