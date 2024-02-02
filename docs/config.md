@@ -77,7 +77,7 @@ services:
 
 ## Installing global dependencies
 
-You can also use the `globals` key if you need to install any [global node dependencies](https://docs.npmjs.com/cli/install). This follows the same syntax as your normal [`package.json`](https://docs.npmjs.com/files/package.json) except written as YAML instead of JSON.
+You can also use the `globals` key if you need to install any [global node dependencies](https://docs.npmjs.com/cli/install/). This follows the same syntax as your normal [`package.json`](https://docs.npmjs.com/files/package.json/) except written as YAML instead of JSON.
 
 ::: tip Use package.json if you can!
 While there are some legitimate use cases to globally install a node dependency, it is almost always preferred to install using your applications normal `package.json` and then running either `lando npm` or `lando yarn` or alternatively setting up a [build step](https://docs.lando.dev/core/v3/lando-service.html#build-steps) that will automatically run before your app starts up.
