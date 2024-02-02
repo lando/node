@@ -15,6 +15,8 @@ mailchimp:
   button: Sign me up!
 ---
 
+# Using Frontend Tooling
+
 Most modern frontend tooling relies upon the NPM package manager. In this tutorial we'll show you how to add Node to your app, download tools like Gulp/Grunt/Webpack, and run them in your Lando app.
 
 When you're done, you should be able to distribute your Lando app with a full set of frontend tools that are standardized to work the same on every team member's computer.

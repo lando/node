@@ -24,7 +24,7 @@ For more info you should check out the [docs](https://docs.lando.dev/node):
 * [Getting Started](https://docs.lando.dev/node/)
 * [Configuration](https://docs.lando.dev/node/config.html)
 * [Caveats](https://docs.lando.dev/node/caveats.html)
-* [Guides](https://docs.lando.dev/node/using-browsersync.html)
+* [Guides](https://docs.lando.dev/guides.html)
 * [Examples](https://github.com/lando/node/tree/main/examples)
 * [Development](https://docs.lando.dev/node/development.html)
 

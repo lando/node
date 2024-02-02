@@ -15,6 +15,8 @@ mailchimp:
   button: Sign me up!
 ---
 
+# Using Compass on a Lando Node Service
+
 Some older `node` based frontend build steps rely on `ruby` and `compass`. If you have such a flow we _highly recommend_ you escape dependency hell and migrate your `sass` build steps to use `node-sass` which is _way_ faster.
 
 However, if you cannot do this you may run into some issues running `compass` inside of your `node` container since this pattern is fundamentally at odds with Lando's one-thing-per-container model.

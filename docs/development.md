@@ -5,7 +5,7 @@ description: Learn how to develop and contribute to the Lando Node service
 
 # Development
 
-This guide contains information to help onboard developers to work on the [node](https://node.microsoft.com/en-us/) integration, hereafter referred to as *the plugin*.
+This guide contains information to help onboard developers to work on the [node](https://nodejs.org/en) integration, hereafter referred to as *the plugin*.
 
 ## Requirements
 
