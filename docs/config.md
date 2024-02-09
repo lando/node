@@ -5,9 +5,9 @@ description: Learn how to configure the Lando Node service.
 
 # Configuration
 
-Here are the configuration options, set to the default values, for this service. If you are unsure about where this goes or what this means, we *highly recommend* scanning the [services documentation](https://docs.lando.dev/config/services.html) to get a good handle on how the magicks work.
+Here are the configuration options, set to the default values, for this service. If you are unsure about where this goes or what this means, we *highly recommend* scanning the [services documentation](https://docs.lando.dev/core/v3/lando-service.html) to get a good handle on how the magicks work.
 
-Also note that options, in addition to the [build steps](https://docs.lando.dev/config/services.html#build-steps) and [overrides](https://docs.lando.dev/config/services.html#overrides) that are available to every service, are shown below:
+Also note that options, in addition to the [build steps](https://docs.lando.dev/core/v3/lando-service.html#build-steps) and [overrides](https://docs.lando.dev/core/v3/lando-service.html#overrides) that are available to every service, are shown below:
 
 ```yaml
 services:
@@ -47,7 +47,7 @@ services:
 
 ## Using SSL
 
-Also note that `ssl: true` will only generate certs in the [default locations](https://docs.lando.dev/config/security.html) and expose port `443`. It is up to the user to use the certs and secure port correctly in their application like the `node` snippet below:
+Also note that `ssl: true` will only generate certs in the [default locations](https://docs.lando.dev/core/v3/security.html) and expose port `443`. It is up to the user to use the certs and secure port correctly in their application like the `node` snippet below:
 
 ```js
 // Get our key and cert
@@ -77,12 +77,12 @@ services:
 
 ## Installing global dependencies
 
-You can also use the `globals` key if you need to install any [global node dependencies](https://docs.npmjs.com/cli/install). This follows the same syntax as your normal [`package.json`](https://docs.npmjs.com/files/package.json) except written as YAML instead of JSON.
+You can also use the `globals` key if you need to install any [global node dependencies](https://docs.npmjs.com/cli/install/). This follows the same syntax as your normal [`package.json`](https://docs.npmjs.com/files/package.json/) except written as YAML instead of JSON.
 
 ::: tip Use package.json if you can!
-While there are some legitimate use cases to globally install a node dependency, it is almost always preferred to install using your applications normal `package.json` and then running either `lando npm` or `lando yarn` or alternatively setting up a [build step](https://docs.lando.dev/config/services.html#build-steps) that will automatically run before your app starts up.
+While there are some legitimate use cases to globally install a node dependency, it is almost always preferred to install using your applications normal `package.json` and then running either `lando npm` or `lando yarn` or alternatively setting up a [build step](https://docs.lando.dev/core/v3/lando-service.html#build-steps) that will automatically run before your app starts up.
 
-Note that both `lando yarn` and `lando npm` are not provided out of the box by the `node` service and need to be manually added by configuring your app's [tooling](https://docs.lando.dev/config/tooling.html).
+Note that both `lando yarn` and `lando npm` are not provided out of the box by the `node` service and need to be manually added by configuring your app's [tooling](https://docs.lando.dev/core/v3/tooling.html).
 :::
 
 An example of globally installing the `latest` `gulp-cli` is shown below:
@@ -96,7 +96,7 @@ services:
     command: npm start
 ```
 
-An example of using a [build step](https://docs.lando.dev/config/services.html#build-steps) to automatically `npm install` your dependencies before your app invokes `yarn start-app` is shown below:
+An example of using a [build step](https://docs.lando.dev/core/v3/lando-service.html#build-steps) to automatically `npm install` your dependencies before your app invokes `yarn start-app` is shown below:
 
 ```yaml
 services:
@@ -127,7 +127,7 @@ lando node
 lando yarn
 ```
 
-Lando tooling is actually pretty powerful so definitely check out [the rest](https://docs.lando.dev/config/tooling.html) of its cool features.
+Lando tooling is actually pretty powerful so definitely check out [the rest](https://docs.lando.dev/core/v3/tooling.html) of its cool features.
 
 ## Adding routing
 
@@ -140,4 +140,4 @@ proxy:
     - something.else.local
 ```
 
-Lando proxying is actually pretty powerful so definitely check out [the rest](https://docs.lando.dev/config/proxy.html) of its cool features.
+Lando proxying is actually pretty powerful so definitely check out [the rest](https://docs.lando.dev/core/v3/proxy.html) of its cool features.

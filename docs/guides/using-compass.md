@@ -15,13 +15,15 @@ mailchimp:
   button: Sign me up!
 ---
 
+# Using Compass on a Lando Node Service
+
 Some older `node` based frontend build steps rely on `ruby` and `compass`. If you have such a flow we _highly recommend_ you escape dependency hell and migrate your `sass` build steps to use `node-sass` which is _way_ faster.
 
 However, if you cannot do this you may run into some issues running `compass` inside of your `node` container since this pattern is fundamentally at odds with Lando's one-thing-per-container model.
 
 You can, however, get around it by installing `ruby` and `compose` directly in the `node` service that requires them.
 
-Below is an example that installs `ruby` and `compass` using [build-steps](https://docs.lando.dev/config/services.html#build-steps).
+Below is an example that installs `ruby` and `compass` using [build-steps](https://docs.lando.dev/core/v3/lando-service.html#build-steps).
 
 ```yaml
 services:
