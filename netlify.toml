@@ -39,9 +39,9 @@
 # We need this so preview environments and the base site look ok on their own
 [[redirects]]
   from = "/"
-  to = "/node"
+  to = "/plugins/node"
   status = 200
 [[redirects]]
-  from = "/node/*"
+  from = "/plugins/node/*"
   to = "/:splat"
   status = 200
