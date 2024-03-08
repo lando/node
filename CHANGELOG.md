@@ -1,3 +1,6 @@
+## v1.2.0 - [March 8, 2024](https://github.com/lando/node/releases/tag/v1.2.0)
+  * Updated to latest database services.
+
 ## v1.1.0 - [January 2, 2023](https://github.com/lando/node/releases/tag/v1.1.0)
   * Added support for Node 20. [#47](https://github.com/lando/node/issues/47)
 
