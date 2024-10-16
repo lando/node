@@ -24,7 +24,7 @@ Run the following commands to validate things are rolling as they should.
 lando exec defaults -- "env | grep NODE_VERSION=16."
 
 # Should use a user specified version if given
-lando exec custom -- "env | grep NODE_VERSION=17."
+lando exec custom -- "env | grep NODE_VERSION=16.13"
 
 # Should use a user specified patch version if given
 lando exec patch -- "env | grep NODE_VERSION=16.13.0"
