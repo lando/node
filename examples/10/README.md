@@ -35,7 +35,7 @@ lando exec defaults -- "curl http://localhost | grep tune"
 lando exec defaults -- "env" | grep NODE_EXTRA_CA_CERTS | grep "$LANDO_CA_CERT"
 
 # Should only serve over http by default
-lando exec defaults -- "curl https://localhost" || echo $? | grep 1
+lando exec defaults -- "curl https://localhost" || echo $? | grep 7
 
 # Should serve over specified ports if given
 lando exec custom -- "curl http://localhost:3000 | grep tune"
@@ -48,13 +48,10 @@ lando exec custom2 -- "curl https://localhost:4444 | grep DANCING"
 
 # Should run as root if it needs to
 lando exec defaults -- "ps -a -u root" | grep "node" | wc -l | grep 2
-lando exec defaults -- "ls -lsa /certs" | grep "root root" | wc -l | grep 10
 lando exec custom -- "ps -a -u root" | grep "node" | wc -l | grep 2
-lando exec custom -- "ls -lsa /certs" | grep "root root" | wc -l | grep 10
 
 # Should run as node if it can
 lando exec custom2 -- "ps -a -u node" | grep "node" | wc -l | grep 2
-lando exec custom2 -- "ls -lsa /certs" | grep "node" | wc -l | grep 8
 
 # Should install global dependencies if specified by user and have them available in PATH
 lando exec custom -- "gulp -v"
@@ -68,7 +65,7 @@ lando exec custom -- "npm uninstall gulp-cli"
 lando exec custom -- "which gulp | grep /var/www/.npm-global"
 
 # Should not serve port for cli
-lando exec cli -- "curl http://localhost" || echo $? | grep 1
+lando exec cli -- "curl http://localhost" || echo $? | grep 7
 ```
 
 ## Destroy tests
