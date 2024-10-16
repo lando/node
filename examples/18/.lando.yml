@@ -12,7 +12,7 @@ services:
     globals:
       grunt-cli: latest
   custom:
-    type: node:18
+    type: node:18.13
     ssl: true
     globals:
       gulp-cli: latest
