@@ -194,12 +194,14 @@ module.exports = {
       // Make sure our command is an array
       if (!_.isArray(options.command)) options.command = [options.command];
       options.command = options.command.join(' && ');
+
       // Build the nodez
       const node = {
         image: `node:${options.version}`,
         environment: {
           PATH: options.path.join(':'),
-          NODE_EXTRA_CA_CERTS: `/lando/certs/${options._app._config.domain}.pem`,
+          NODE_EXTRA_CA_CERTS: _.get(options, '_app._config.appEnv.LANDO_CA_CERT', '/lando/certs/LandoCA.crt'),
+          NODE_OPTIONS: '--use-openssl-ca',
           NPM_CONFIG_PREFIX: '/var/www/.npm-global',
           LANDO_WEBROOT_USER: 'node',
           LANDO_WEBROOT_GROUP: 'node',

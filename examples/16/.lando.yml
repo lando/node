@@ -11,12 +11,8 @@ services:
     type: node:16
     globals:
       grunt-cli: latest
-    build_as_root:
-      - apt-get update -y
-      - apt-get install ruby-full -y
-      - gem install compass
   custom:
-    type: node:17
+    type: node:16.13
     ssl: true
     globals:
       gulp-cli: latest
@@ -34,12 +30,10 @@ services:
   patch:
     type: node:16.13.0
 tooling:
-  ruby:
-    service: compass
-  compass:
+  grunt:
     service: compass
 
 # This is important because it lets lando know to test against the plugin in this repo
 # DO NOT REMOVE THIS!
 plugins:
-  "@lando/node": ./../../
+  "@lando/node": ../..
