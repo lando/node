@@ -11,10 +11,6 @@ services:
     type: node:20
     globals:
       grunt-cli: latest
-    build_as_root:
-      - apt-get update -y
-      - apt-get install ruby-full -y
-      - gem install compass
   custom:
     type: node:20
     ssl: true
@@ -32,12 +28,10 @@ services:
       - yarn
     command: /app/node_modules/.bin/nodemon src/app-custom.js --watch src --ignore *.test.js
 tooling:
-  ruby:
-    service: compass
-  compass:
+  grunt:
     service: compass
 
 # This is important because it lets lando know to test against the plugin in this repo
 # DO NOT REMOVE THIS!
 plugins:
-  "@lando/node": ./../../
+  "@lando/node": ../..

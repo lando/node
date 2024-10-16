@@ -1,13 +1,11 @@
-Node 14 Example
-===============
+# Node 14 Example
 
 This example exists primarily to test the following documentation:
 
 * [Node 14-16 Service](https://docs.devwithlando.io/tutorials/node.html)
 * [Installing compass in your node service](https://docs.lando.dev/guides/using-compass-on-a-lando-node-service.html)
 
-Start up tests
---------------
+## Start up tests
 
 Run the following commands to get up and running with this example.
 
@@ -17,70 +15,64 @@ lando poweroff
 lando start
 ```
 
-Verification commands
----------------------
+## Verification commands
 
 Run the following commands to validate things are rolling as they should.
 
 ```bash
 # Should use 14.x as the default version
-lando ssh -s defaults -c "env | grep NODE_VERSION=14."
+lando exec defaults -- "env | grep NODE_VERSION=14."
 
 # Should use a user specified version if given
-lando ssh -s custom -c "env | grep NODE_VERSION=16."
+lando exec custom -- "env | grep NODE_VERSION=16."
 
 # Should use a user specified patch version if given
-lando ssh -s patch -c "env | grep NODE_VERSION=14.18.1"
+lando exec patch -- "env | grep NODE_VERSION=14.18.1"
 
 # Should serve over port 80 by default
-lando ssh -s defaults -c "curl http://localhost | grep tune"
+lando exec defaults -- "curl http://localhost | grep tune"
 
 # Should set NODE_EXTRA_CA_CERTS with lando domain CA
-lando ssh -s defaults -c "env" | grep NODE_EXTRA_CA_CERTS | grep "$LANDO_CA_CERT"
+lando exec defaults -- "env" | grep NODE_EXTRA_CA_CERTS | grep "$LANDO_CA_CERT"
 
 # Should only serve over http by default
-lando ssh -s defaults -c "curl https://localhost" || echo $? | grep 1
+lando exec defaults -- "curl https://localhost" || echo $? | grep 7
 
 # Should serve over specified ports if given
-lando ssh -s custom -c "curl http://localhost:3000 | grep tune"
+lando exec custom -- "curl http://localhost:3000 | grep tune"
 
 # Should serve over https is ssl is set by user
-lando ssh -s custom -c "curl https://localhost | grep tune"
+lando exec custom -- "curl https://localhost | grep tune"
 
 # Should servce over a custom https port if ssl is set to a specific port
-lando ssh -s custom2 -c "curl https://localhost:4444 | grep DANCING"
+lando exec custom2 -- "curl https://localhost:4444 | grep DANCING"
 
 # Should run as root if it needs to
-lando ssh -s defaults -c "ps -a -u root" | grep "node" | wc -l | grep 2
-lando ssh -s defaults -c "ls -lsa /certs" | grep "root root" | wc -l | grep 10
-lando ssh -s custom -c "ps -a -u root" | grep "node" | wc -l | grep 2
-lando ssh -s custom -c "ls -lsa /certs" | grep "root root" | wc -l | grep 10
+lando exec defaults -- "ps -a -u root" | grep "node" | wc -l | grep 2
+lando exec custom -- "ps -a -u root" | grep "node" | wc -l | grep 2
 
 # Should run as node if it can
-lando ssh -s custom2 -c "ps -a -u node" | grep "node" | wc -l | grep 2
-lando ssh -s custom2 -c "ls -lsa /certs" | grep "node" | wc -l | grep 8
+lando exec custom2 -- "ps -a -u node" | grep "node" | wc -l | grep 2
 
 # Should install global dependencies if specified by user and have them available in PATH
-lando ssh -s custom -c "gulp -v"
-lando ssh -s custom -c "which gulp | grep /var/www/.npm-global"
+lando exec custom -- "gulp -v"
+lando exec custom -- "which gulp | grep /var/www/.npm-global"
 
 # Should PATH prefer node dependency binaries installed in /app/node_modules over global ones
-lando ssh -s custom -c "npm install gulp-cli --no-save"
-lando ssh -s custom -c "gulp -v"
-lando ssh -s custom -c "which gulp | grep /app/node_modules/.bin"
-lando ssh -s custom -c "npm uninstall gulp-cli"
-lando ssh -s custom -c "which gulp | grep /var/www/.npm-global"
+lando exec custom -- "npm install gulp-cli --no-save"
+lando exec custom -- "gulp -v"
+lando exec custom -- "which gulp | grep /app/node_modules/.bin"
+lando exec custom -- "npm uninstall gulp-cli"
+lando exec custom -- "which gulp | grep /var/www/.npm-global"
 
 # Should not serve port for cli
-lando ssh -s cli -c "curl http://localhost" || echo $? | grep 1
+lando exec cli -- "curl http://localhost" || echo $? | grep 7
 
-# Should install ruby and compass on the compass service
-lando ruby -v
-lando compass -v
+# Should install gruntcli
+lando grunt -V
 ```
 
-Destroy tests
--------------
+## Destroy tests
 
 Run the following commands to trash this app like nothing ever happened.
 
