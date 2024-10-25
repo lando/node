@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+* Updated release process to generate an edge release when stable releases are created.
+
 ## v1.2.1 - [October 16, 2024](https://github.com/lando/node/releases/tag/v1.2.1)
 
 * Fixed issue with `NODE_EXTRA_CA_CERTS` not being set correctly or dynamically [#85](https://github.com/lando/node/issues/85)
