@@ -19,9 +19,11 @@ jobs:
           - examples/18
           - examples/19
           - examples/20
+          - examples/21
+          - examples/22
+          - examples/23
         lando-version:
           - 3-edge
-          - 3-stable
         os:
           - ubuntu-24.04
         node-version:
