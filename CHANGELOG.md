@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+## v1.4.0 - [December 20, 2024](https://github.com/lando/node/releases/tag/v1.4.0)
+
 * Added support for Node 23, 22 and 21. [#92](https://github.com/lando/node/issues/92)
 
 ## v1.3.3 - [December 6, 2024](https://github.com/lando/node/releases/tag/v1.3.3)
