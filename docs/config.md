@@ -140,4 +140,4 @@ proxy:
     - something.else.local
 ```
 
-Lando proxying is actually pretty powerful so definitely check out [the rest](https://docs.lando.dev/config/proxy.html) of its cool features.
+Lando proxying is actually pretty powerful so definitely check out [the rest](https://docs.lando.dev/landofile/proxy.html) of its cool features.
