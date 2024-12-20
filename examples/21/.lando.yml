@@ -1,0 +1,37 @@
+name: lando-node-21
+services:
+  defaults:
+    type: node:21
+    build:
+      - yarn
+    command: /app/node_modules/.bin/nodemon src/app-http.js --watch src --ignore *.test.js
+  cli:
+    type: node
+  compass:
+    type: node:21
+    globals:
+      grunt-cli: latest
+  custom:
+    type: node:21
+    ssl: true
+    globals:
+      gulp-cli: latest
+    port: 3000
+    build:
+      - yarn
+    command: /app/node_modules/.bin/nodemon src/app-https.js --watch src --ignore *.test.js
+  custom2:
+    type: node:21.5.0
+    ssl: 4444
+    port: 3000
+    build:
+      - yarn
+    command: /app/node_modules/.bin/nodemon src/app-custom.js --watch src --ignore *.test.js
+tooling:
+  grunt:
+    service: compass
+
+# This is important because it lets lando know to test against the plugin in this repo
+# DO NOT REMOVE THIS!
+plugins:
+  "@lando/node": ../..

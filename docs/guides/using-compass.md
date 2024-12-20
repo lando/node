@@ -23,7 +23,7 @@ However, if you cannot do this you may run into some issues running `compass` in
 
 You can, however, get around it by installing `ruby` and `compose` directly in the `node` service that requires them.
 
-Below is an example that installs `ruby` and `compass` using [build-steps](https://docs.lando.dev/core/v3/services/lando.html#build-steps).
+Below is an example that installs `ruby` and `compass` using [build-steps](https://docs.lando.dev/services/lando-3.html#build-steps).
 
 ```yaml
 services:
