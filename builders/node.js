@@ -281,10 +281,14 @@ module.exports = {
         options.ssl = true;
       }
 
-      // Run as the node user if we can
+      // Determine the user to run as based on port requirements
       if (_.min([options.port, options.sport]) >= 1024) {
+        // For ports 1024 and above, we can run as the node user
         node.environment.LANDO_RESET_DIR = '/certs';
         node.environment.LANDO_DROP_USER = 'node';
+      } else {
+        // For ports below 1024, we require root privileges to bind due to Linux's security restrictions
+        node.environment.LANDO_DROP_USER = 'root';
       }
 
       // Send it downstream

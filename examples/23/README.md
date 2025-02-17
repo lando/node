@@ -44,15 +44,15 @@ lando exec custom -- "curl http://localhost:3000 | grep tune"
 # Should serve over https is ssl is set by user
 lando exec custom -- "curl https://localhost | grep tune"
 
-# Should servce over a custom https port if ssl is set to a specific port
+# Should serve over a custom https port if ssl is set to a specific port
 lando exec custom2 -- "curl https://localhost:4444 | grep DANCING"
 
-# Should run as root if it needs to
-lando exec defaults -- "ps -a -u root" | grep "node" | wc -l | grep 2
-lando exec custom -- "ps -a -u root" | grep "node" | wc -l | grep 2
+# Should run as root if using ports below 1024
+lando exec defaults -- pgrep -c -u root -f "node src/app-http.js" | grep 1
+lando exec custom -- pgrep -c -u root -f "node src/app-https.js" | grep 1
 
-# Should run as node if it can
-lando exec custom2 -- "ps -a -u node" | grep "node" | wc -l | grep 2
+# Should run as node if using ports 1024 and above
+lando exec custom2 -- pgrep -c -u node -f "node src/app-custom.js" | grep 1
 
 # Should install global dependencies if specified by user and have them available in PATH
 lando exec custom -- "gulp -v"
