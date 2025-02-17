@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+* Updated Node support to include the latest minor versions for Node `23` (up to `23.8`), `22` (up to `22.14`), `20` (up to `20.18`), `19` (up to `19.9`), `18` (up to `18.20`), and `16` (up to `16.20`)
+
 ## v1.4.0 - [December 20, 2024](https://github.com/lando/node/releases/tag/v1.4.0)
 
 * Added support for Node 23, 22 and 21. [#92](https://github.com/lando/node/issues/92)
