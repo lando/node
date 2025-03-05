@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+## v1.5.0 - [March 5, 2025](https://github.com/lando/node/releases/tag/v1.5.0)
+
 * Updated Node support to include the latest minor versions for Node `23` (up to `23.8`), `22` (up to `22.14`), `20` (up to `20.18`), `19` (up to `19.9`), `18` (up to `18.20`), and `16` (up to `16.20`)
 * Fixed issue causing npx scripts to fail ([#97](https://github.com/lando/node/issues/97))
 
