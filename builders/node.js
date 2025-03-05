@@ -4,6 +4,7 @@
 const _ = require('lodash');
 
 // Constants
+const LEGACY_DEFAULT_VERSION = '14';
 const supportedVersions = [
   '23',
   '23.8',
@@ -220,7 +221,7 @@ const pkger = (pkg, version = 'latest') => `${pkg}@${version}`;
 module.exports = {
   name: 'node',
   config: {
-    version: '14',
+    version: LEGACY_DEFAULT_VERSION,
     supported: supportedVersions,
     patchesSupported: true,
     legacy: ['12', '10', '8', '6'],
@@ -270,10 +271,11 @@ module.exports = {
       // Add port to "moreHttpsPorts"
       options.moreHttpPorts.push(options.port);
       // Add our npm things to run step
+      let commands = ['mkdir -p $NPM_CONFIG_PREFIX/{bin,lib,share}'];
       if (!_.isEmpty(options.globals)) {
-        const commands = require('../utils/get-install-commands')(options.globals, pkger, ['npm', 'install', '-g']);
-        require('../utils/add-build-step')(commands, options._app, options.name);
+        commands = require('../utils/get-install-commands')(options.globals, pkger, ['npm', 'install', '-g']);
       }
+      require('../utils/add-build-step')(commands, options._app, options.name);
       // Set the sport and moreHttpPorts if ssl is numeric
       if (options.ssl) {
         options.sport = _.isInteger(options.ssl) ? options.ssl : 443;
