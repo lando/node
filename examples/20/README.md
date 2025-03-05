@@ -68,6 +68,9 @@ lando exec custom -- "which gulp | grep /var/www/.npm-global"
 # Should not serve port for cli
 lando exec cli -- "curl http://localhost" || echo $? | grep 7
 
+# Should execute npx scripts
+lando npx cowsay "Hello World"
+
 # Should install gruntcli
 lando grunt -V
 ```
