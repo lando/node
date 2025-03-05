@@ -30,6 +30,8 @@ services:
 tooling:
   grunt:
     service: compass
+  npx:
+    service: cli
 
 # This is important because it lets lando know to test against the plugin in this repo
 # DO NOT REMOVE THIS!

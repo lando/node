@@ -70,6 +70,9 @@ lando exec cli -- "curl http://localhost" || echo $? | grep 7
 
 # Should install gruntcli
 lando grunt -V
+
+# Should execute npx scripts
+lando npx cowsay "Hello World"
 ```
 
 ## Destroy tests
