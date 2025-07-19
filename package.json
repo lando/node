@@ -3,7 +3,7 @@
   "description": "The Official Node Lando Plugin.",
   "version": "1.5.0",
   "author": "Mike Pirog @pirog",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "repository": "lando/node",
   "bugs": "https://github.com/lando/node/issues/new/choose",
   "homepage": "https://github.com/lando/node",
