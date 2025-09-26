@@ -22,6 +22,7 @@ jobs:
           - examples/21
           - examples/22
           - examples/23
+          - examples/24
         lando-version:
           - 3-edge
         os:
