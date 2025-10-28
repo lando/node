@@ -1,6 +1,6 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
-* Added support for Node `24` (up to `24.10`)
+* Added support for Node LTS `24` (up to `24.11`)
 * Updated Node LTS support to include the latest minor versions for `22` (up to `22.20`) and `20` (up to `20.19`)
 * Fixed `test:leia`
 
