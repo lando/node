@@ -3,8 +3,11 @@ name: Publish to NPM
 on:
   release:
     types:
-      - published
-      - edited
+      - created
+
+permissions:
+  id-token: write
+  contents: read
 
 jobs:
   deploy:
@@ -18,11 +21,10 @@ jobs:
         node-version:
           - '20'
     steps:
-      # Install deps and cache
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Install node ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: ${{ matrix.node-version }}
           registry-url: https://registry.npmjs.org
@@ -30,13 +32,11 @@ jobs:
       - name: Install dependencies
         run: npm clean-install --prefer-offline --frozen-lockfile
 
-      # Let's do tests rq just to make sure we dont push something that is fundamentally broken
       - name: Lint code
         run: npm run lint
       - name: Run unit tests
         run: npm run test:unit
 
-      # Prepare release.
       - name: Prepare release
         uses: lando/prepare-release-action@v3
         with:
@@ -45,7 +45,8 @@ jobs:
           sync-token: ${{ secrets.RTFM47_COAXIUM_INJECTOR }}
           sync-username: rtfm-47
 
-      # Deploy
+      - name: Upgrade npm for trusted publishing
+        run: npm install -g "npm@^11.5.1"
       - name: Publish to npm
         run: |
           VERSION=$(node -p "require('./package.json').version")

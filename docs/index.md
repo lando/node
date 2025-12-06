@@ -1,7 +1,6 @@
 ---
 title: Node Lando Plugin
 description: Add a highly configurable NodeJS service to Lando for local development with all the power of Docker and Docker Compose; comes with composer, xdebug and multiple versions for lols.
-next: ./config.html
 ---
 
 # Node
@@ -13,7 +12,7 @@ You can easily add it to your Lando app by adding an entry to the [services](htt
 ```yaml
 services:
   myservice:
-    type: node:16
+    type: node:24
     command: npm start
 ```
 
@@ -29,7 +28,7 @@ services:
 *   [17](https://hub.docker.com/_/node)
 *   [16](https://hub.docker.com/_/node)
 *   [15](https://hub.docker.com/_/node)
-*   **[14](https://hub.docker.com/_/node)** **(default)**
+*   [14](https://hub.docker.com/_/node)
 *   [custom](https://docs.lando.dev/services/lando-3.html#overrides)
 
 ## Legacy versions
