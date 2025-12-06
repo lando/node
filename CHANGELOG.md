@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+## v1.6.0 - [December 6, 2025](https://github.com/lando/node/releases/tag/v1.6.0)
+
 * Added support for Node LTS `24` (up to `24.11`)
 * Updated Node LTS support to include the latest minor versions for `22` (up to `22.21`) and `20` (up to `20.19`)
 * Fixed `test:leia`
