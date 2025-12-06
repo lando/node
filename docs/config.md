@@ -12,7 +12,7 @@ Also note that options, in addition to the [build steps](https://docs.lando.dev/
 ```yaml
 services:
   myservice:
-    type: node:18
+    type: node:24
     ssl: false
     command: tail -f /dev/null
     globals: []
@@ -70,7 +70,7 @@ You can also set `ssl` to a specific port. This will do the same thing as `ssl: 
 ```yaml
 services:
   myservice:
-    type: node
+    type: node:24
     port: 3000
     ssl: 4444
 ```
@@ -90,7 +90,7 @@ An example of globally installing the `latest` `gulp-cli` is shown below:
 ```yaml
 services:
   myservice:
-    type: node
+    type: node:24
     globals:
       gulp-cli: latest
     command: npm start
@@ -101,7 +101,7 @@ An example of using a [build step](https://docs.lando.dev/services/lando-3.html#
 ```yaml
 services:
   myservice:
-    type: node
+    type: node:24
     build:
       - npm install
     command: yarn start-app

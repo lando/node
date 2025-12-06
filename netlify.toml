@@ -10,11 +10,9 @@
 [[context.deploy-preview.plugins]]
   package = "netlify-plugin-checklinks"
   [context.deploy-preview.plugins.inputs]
-    todoPatterns = [ "load", "CHANGELOG.html", "x.com", "twitter.com", "/v/" ]
+    todoPatterns = [ "load", "CHANGELOG.html", "x.com", "twitter.com", "/v/", "https://hub.docker.com/_/node" ]
     skipPatterns = [ ".rss", ".gif", ".jpg" ]
     checkExternal = true
-
-
 
 # Sets our asset optimization
 [build.processing.css]
@@ -40,8 +38,6 @@
   package = "@netlify/plugin-lighthouse"
   [plugins.inputs.audits]
     output_path = "reports/lighthouse.html"
-
-
 
 # We need this so preview environments and the base site look ok on their own
 [[redirects]]
