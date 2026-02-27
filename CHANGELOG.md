@@ -1,5 +1,10 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+* Added support for Node `25` (up to `25.7`)
+* Updated Node support to include latest minor versions for `24` (up to `24.14`), `23` (up to `23.11`), `22` (up to `22.22`), and `20` (up to `20.20`)
+* Moved Node `15`, `17`, and `19` to legacy versions in docs
+* Updated docs and README examples to use Node 25
+
 * Updated `@lando/argv` to `1.2.0`
 * Updated `lodash` to `4.17.23`
 * Updated `lodash-es` to `4.17.23`
