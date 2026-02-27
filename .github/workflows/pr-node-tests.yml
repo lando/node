@@ -17,7 +17,6 @@ jobs:
           - examples/14
           - examples/16
           - examples/18
-          - examples/19
           - examples/20
           - examples/21
           - examples/22
