@@ -1,5 +1,11 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+* Updated `@lando/argv` to `1.2.0`
+* Updated `lodash` to `4.17.23`
+* Updated `lodash-es` to `4.17.23`
+* Updated `tar` to `4.4.19` in examples/12
+* Updated GitHub Actions dependencies
+
 ## v1.6.0 - [December 6, 2025](https://github.com/lando/node/releases/tag/v1.6.0)
 
 * Added support for Node LTS `24` (up to `24.11`)
