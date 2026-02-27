@@ -5,6 +5,7 @@
 * Updated `lodash-es` to `4.17.23`
 * Updated `tar` to `4.4.19` in examples/12
 * Updated GitHub Actions dependencies
+* Removed Node 19 and 21 test examples (EOL, deps like `minimatch` no longer support odd non-LTS releases)
 
 ## v1.6.0 - [December 6, 2025](https://github.com/lando/node/releases/tag/v1.6.0)
 
