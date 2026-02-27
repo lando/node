@@ -5,6 +5,8 @@
 * Updated `lodash-es` to `4.17.23`
 * Updated `tar` to `4.4.19` in examples/12
 * Updated GitHub Actions dependencies
+* Added support for Node `25` (up to `25.7`)
+* Updated Node support to include latest minor versions for `24` (up to `24.14`), `23` (up to `23.11`), `22` (up to `22.22`), and `20` (up to `20.20`)
 * Removed Node 19 test example (EOL, deps like `minimatch` no longer support it)
 * Fixed Node 21 test example by pinning `minimatch` to `^9.0.0` for compatibility
 
