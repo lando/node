@@ -15,7 +15,7 @@ Add a `node` service to your Landofile
 ```yaml
 services:
   myservice:
-    type: node:24
+    type: node:25
     command: npm start
 ```
 

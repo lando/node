@@ -12,22 +12,20 @@ You can easily add it to your Lando app by adding an entry to the [services](htt
 ```yaml
 services:
   myservice:
-    type: node:24
+    type: node:25
     command: npm start
 ```
 
 ## Supported versions
 
+*   [25](https://hub.docker.com/_/node)
 *   [24](https://hub.docker.com/_/node)
 *   [23](https://hub.docker.com/_/node)
 *   [22](https://hub.docker.com/_/node)
 *   [21](https://hub.docker.com/_/node)
 *   [20](https://hub.docker.com/_/node)
-*   [19](https://hub.docker.com/_/node)
 *   [18](https://hub.docker.com/_/node)
-*   [17](https://hub.docker.com/_/node)
 *   [16](https://hub.docker.com/_/node)
-*   [15](https://hub.docker.com/_/node)
 *   [14](https://hub.docker.com/_/node)
 *   [custom](https://docs.lando.dev/services/lando-3.html#overrides)
 
@@ -35,6 +33,9 @@ services:
 
 You can still run these versions with Lando but for all intents and purposes they should be considered deprecated (e.g. YMMV and do not expect a ton of support if you have an issue).
 
+*   [19](https://hub.docker.com/_/node)
+*   [17](https://hub.docker.com/_/node)
+*   [15](https://hub.docker.com/_/node)
 *   [13](https://hub.docker.com/_/node)
 *   [12](https://hub.docker.com/_/node)
 *   [11](https://hub.docker.com/_/node)
