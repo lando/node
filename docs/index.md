@@ -18,6 +18,7 @@ services:
 
 ## Supported versions
 
+*   [26](https://hub.docker.com/_/node)
 *   [24](https://hub.docker.com/_/node)
 *   [23](https://hub.docker.com/_/node)
 *   [22](https://hub.docker.com/_/node)
