@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+## v1.7.0 - [August 13, 2026](https://github.com/lando/node/releases/tag/v1.7.0)
+
 * Updated `@lando/argv` to `1.2.0`
 * Updated `lodash` to `4.17.23`
 * Updated `lodash-es` to `4.17.23`
