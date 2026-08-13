@@ -7,6 +7,9 @@
 * Updated GitHub Actions dependencies
 * Removed Node 19 test example (EOL, deps like `minimatch` no longer support it)
 * Fixed Node 21 test example by pinning `minimatch` to `^9.0.0` for compatibility
+* Added support for Node `26` (up to `26.7`)
+* Updated Node LTS support to include the latest minor versions for `24` (up to `24.19`), `22` (up to `22.23`), and `20` (up to `20.20`)
+* Restored Yarn on Node `26+` images, which no longer bundle Yarn v1
 
 ## v1.6.0 - [December 6, 2025](https://github.com/lando/node/releases/tag/v1.6.0)
 
