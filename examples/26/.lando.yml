@@ -3,7 +3,7 @@ services:
   defaults:
     type: node:26
     build:
-      - yarn
+      - npm install
     command: /app/node_modules/.bin/nodemon src/app-http.js --watch src --ignore *.test.js
   cli:
     type: node
@@ -18,14 +18,14 @@ services:
       gulp-cli: latest
     port: 3000
     build:
-      - yarn
+      - npm install
     command: /app/node_modules/.bin/nodemon src/app-https.js --watch src --ignore *.test.js
   custom2:
     type: node:26.3.0
     ssl: 4444
     port: 3000
     build:
-      - yarn
+      - npm install
     command: /app/node_modules/.bin/nodemon src/app-custom.js --watch src --ignore *.test.js
 tooling:
   grunt:

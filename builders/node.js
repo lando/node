@@ -7,11 +7,15 @@ const _ = require('lodash');
 const LEGACY_DEFAULT_VERSION = '14';
 const supportedVersions = [
   '26',
+  '26.7',
+  '26.6',
+  '26.5',
   '26.4',
   '26.3',
   '26.2',
   '26.1',
   '24',
+  '24.19',
   '24.18',
   '24.17',
   '24.16',
@@ -72,6 +76,7 @@ const supportedVersions = [
   '21.2',
   '21.1',
   '20',
+  '20.20',
   '20.19',
   '20.18',
   '20.17',
@@ -305,9 +310,17 @@ module.exports = {
       // Add port to "moreHttpsPorts"
       options.moreHttpPorts.push(options.port);
       // Add our npm things to run step
-      let commands = ['mkdir -p $NPM_CONFIG_PREFIX/{bin,lib,share}'];
+      const commands = ['mkdir -p $NPM_CONFIG_PREFIX/{bin,lib,share}'];
+      const major = parseInt(String(options.version).split('.')[0], 10);
+      if (!Number.isNaN(major) && major >= 26) {
+        commands.push('command -v yarn >/dev/null 2>&1 || npm install --global yarn');
+      }
       if (!_.isEmpty(options.globals)) {
-        commands = require('../utils/get-install-commands')(options.globals, pkger, ['npm', 'install', '-g']);
+        commands.push(...require('../utils/get-install-commands')(
+          options.globals,
+          pkger,
+          ['npm', 'install', '-g'],
+        ));
       }
       require('../utils/add-build-step')(commands, options._app, options.name);
       // Set the sport and moreHttpPorts if ssl is numeric
