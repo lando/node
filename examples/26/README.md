@@ -65,6 +65,10 @@ lando exec custom -- "which gulp | grep /app/node_modules/.bin"
 lando exec custom -- "npm uninstall gulp-cli"
 lando exec custom -- "which gulp | grep /var/www/.npm-global"
 
+# Should install yarn since node 26 images no longer bundle it
+lando exec defaults -- "yarn --version"
+lando exec custom -- "which yarn | grep /var/www/.npm-global"
+
 # Should not serve port for cli
 lando exec cli -- "curl http://localhost" || echo $? | grep 7
 
