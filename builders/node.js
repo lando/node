@@ -7,6 +7,12 @@ const _ = require('lodash');
 const LEGACY_DEFAULT_VERSION = '14';
 const supportedVersions = [
   '26',
+  '26.13',
+  '26.12',
+  '26.11',
+  '26.10',
+  '26.9',
+  '26.8',
   '26.7',
   '26.6',
   '26.5',
@@ -25,6 +31,9 @@ const supportedVersions = [
   '25.2',
   '25.1',
   '24',
+  '24.22',
+  '24.21',
+  '24.20',
   '24.19',
   '24.18',
   '24.17',
