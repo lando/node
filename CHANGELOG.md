@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+* Updated Node LTS support to include the latest minor versions for `26` (up to `26.13`) and `24` (up to `24.22`)
+
 ## v1.7.0 - [August 13, 2026](https://github.com/lando/node/releases/tag/v1.7.0)
 
 * Updated `@lando/argv` to `1.2.0`
